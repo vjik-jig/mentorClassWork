@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mentor class work</title>
+  </head>
+  <body>
+    <script>
+      var a = "background-color-size";
+
+      function tocamelCase(str) {
+        str = str.split("-");
+        str = str.reduce(function(phrase, word, index) {
+          var toUpperFirst = function(someWord) {
+            var res = someWord.split("");
+            var cap = res[0].toUpperCase();
+            res.splice(0, 1, cap);
+            res = res.join("");
+            return res;
+          };
+
+          return index > 0 ? phrase + toUpperFirst(word) : phrase + word;
+        }, "");
+        return str;
+      }
+      console.log(tocamelCase(a));
+    </script>
+  </body>
+</html>
